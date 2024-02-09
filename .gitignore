@@ -1,0 +1,11 @@
+# 忽略所有 .pyc 文件
+*.pyc
+
+# 忽略所有以 .log 结尾的文件
+*.log
+*.sqlite3
+# 忽略某个特定文件夹
+images/
+media/
+# 忽略某个特定文件
+myfile.txt
