@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Add</title>
+    </head>
+    <body>
+        <h1> Add history for test purpose</h1>
+        <form action="", enctype="multipart/form-data", method="POST">
+            {% csrf_token %}
+            <label for="user">Select user: </label>
+            <select id="user" name="user">
+                {% for user in users %}
+                  <option value="{{ user.id }}">{{ user.user_name }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="door">Select door: </label>
+            <select id="door" name="door">
+                {% for door in doors %}
+                  <option value="{{ door.id }}">{{ door.position }}</option>
+                {% endfor %}
+            </select>
+            <label for="user_image_fileget">Image</label>
+            <input type="file" name="incident_image" id="incident_image">
+
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html> 

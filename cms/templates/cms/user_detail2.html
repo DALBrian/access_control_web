@@ -1,0 +1,15 @@
+<DOCTYPE html>
+    <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <title>User Detail</title>
+    </head>
+    <body>
+        <h1> Users List</h1>
+        {% for user, img in user_img_list %}
+            <h2> Username: {{ user.user_name }}</h2>
+            <img src="data:image/jpeg;base64,{{ img }}" alt="User's face" />
+        {% endfor %}
+    </body>
+    </html>
+</DOCTYPE>
