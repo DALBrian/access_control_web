@@ -29,7 +29,6 @@ def delete_user(request):
 
 def user_detail(request):
     list_user = User.objects.all()
-    img_ = list()
     img_list = [base64.b64encode(user.user_image).decode('utf-8') for user in list_user]
     user_img_list = zip(list_user, img_list)
     return render(request, 'cms/user_detail.html', context={'user_img_list': user_img_list})
@@ -41,22 +40,28 @@ def door_detail(request):
     return render(request, 'cms/door_detail.html', locals())
 
 def history(request):
-    return render(request, 'cms/history.html', locals())
-
+    history = History.objects.all()
+    history_image_list = list()
+    for h in history:
+        if h.image is not None:
+            h.image = base64.b64encode(h.image).decode('utf-8')
+            print(h.user_id.user_name)
+            history_image_list.append((h, h.image))
+    return render(request, 'cms/history.html', context = {'history_image_list': history_image_list})
 
 def create_history(request):
     if request.method == 'POST':
-        users = User.objects.all()
-        doors = Door.objects.all()
+        users = User.objects.all() # wrapped in locals()
+        doors = Door.objects.all() # wrapped in locals()
         user_id = request.POST.get('user_id')
+        user_id = User.objects.get(pk=user_id)
         door_id = request.POST.get('door_id')
-        incident_image = request.FILES.get('incident_image')
-        contaxt = {'users': users, 'doors': doors}
-        history = History(door_id = user_id, user_id = door_id, image = incident_image.read())
+        door_id = Door.objects.get(pk=door_id)
+        image = request.FILES.get('incident_image')
+        history = History(user_id = user_id, door_id = door_id, image = image.read())
         history.save()
         return render(request, 'cms/create_history.html', locals())
     else:
-        print("else")
-        users = User.objects.all()
-        doors = Door.objects.all()
+        users = User.objects.all() # wrapped in locals()
+        doors = Door.objects.all() # wrapped in locals()
         return render(request, 'cms/create_history.html', locals())

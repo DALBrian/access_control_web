@@ -1,4 +1,12 @@
 {% extends "base_generic.html" %}
 {% block content %}
-    <h1>Under construction.</h1>
+    <h1>History view</h1>
+    {% for history, image in history_image_list %}
+        <h2>Incident ID: {{ history.incident_id}}</h2>
+        <h2>Door position: {{ history.door_id }}</h2>
+        <h2>User name: {{ history.user_id.user_name }}</h2>
+        <h2>Time: {{ history.time }}</h2>
+        <img src="data:image/jpeg;base64,{{ image }}" alt="Entrance view" />
+        <h3>------------------------------------</h3>
+    {% endfor %}
 {% endblock %}

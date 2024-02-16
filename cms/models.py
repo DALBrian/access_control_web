@@ -3,7 +3,9 @@ from django.contrib.auth.models import User
 import os
 class User(models.Model):
     # todo: Username suppose to be unique
+    # user_id = models.AutoField(primary_key=True, help_text='Unique ID for this particular user') # not migrate yet; todo
     user_name = models.CharField(max_length=50, help_text='Enter the user name')
+    # user_name = models.CharField(max_length=50, unique=True, help_text='Enter the user name') # todo
     user_image = models.BinaryField(null=True, blank=True, help_text='Image of user face')
 class History(models.Model):
     # View the history of door access

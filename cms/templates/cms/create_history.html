@@ -9,16 +9,16 @@
         <form action="", enctype="multipart/form-data", method="POST">
             {% csrf_token %}
             <label for="user">Select user: </label>
-            <select id="user" name="user">
+            <select id="user" name="user_id">
                 {% for user in users %}
                   <option value="{{ user.id }}">{{ user.user_name }}</option>
                 {% endfor %}
             </select>
 
-            <label for="door">Select door: </label>
-            <select id="door" name="door">
+            <label for="door">Select door position: </label>
+            <select id="door" name="door_id">
                 {% for door in doors %}
-                  <option value="{{ door.id }}">{{ door.position }}</option>
+                <option value="{{ door.door_id }}">{{ door.position }}</option>
                 {% endfor %}
             </select>
             <label for="user_image_fileget">Image</label>
