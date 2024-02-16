@@ -71,27 +71,8 @@ TEMPLATES = [
 WSGI_APPLICATION = 'DoorAccess.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-# Original code
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-# MySQL Setting
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Django_web',
-        'USER': 'test1',
-        'PASSWORD': 'NTUST=me800',
-        'HOST': '192.168.68.103',   
-        'PORT': '3122',        
-    }
-}
-
+from .db_config import db_config
+DATABASES = db_config
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
