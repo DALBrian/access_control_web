@@ -7,6 +7,8 @@ from django.views import generic
 # for history edit
 # from .forms import HistoryForm
 def cms_home(request):
+    num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
     return render(request, 'cms/cms_home.html', locals())
 
 def add_user(request):
@@ -25,6 +27,8 @@ def delete_user(request):
         user = User.objects.get(pk=user_id)
         user.delete()
         return render(request, 'cms/delete_user.html', locals())
+    else:
+        list_user = User.objects.all()
     return render(request, 'cms/delete_user.html', locals())
 
 def user_detail(request):

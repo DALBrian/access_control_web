@@ -1,11 +1,13 @@
 {% extends "base_generic.html" %}
+{% load static %}
 {% block content %}
     {% block title %}
         <title>Door Access Web</title>
     {% endblock %}
     <h1>Door Access Web</h1>
-    <p>Welcome to the Door Access Web, a website developed by <em>PoYen Chiu</em>!</p>
-    <p>
-        You have visited this page {{ num_visits }} time {{ num_visits|pluralize}}
-    </p>
+    <p>Welcome to the Door Access Web, website developed by <em>PoYen Chiu</em>!</p>
+    <img src="{% static 'profile.jpg' %}" alt="My profile">
+    <p></p>
+    <a href="https://hackmd.io/@xZxFAAp6S7GzTDM9B-4Mtg/Po-Yen_CV">My CV</a> 
+    <p>You have visited this page {{ num_visits }} time {{ num_visits|pluralize}}</p>
 {% endblock %}

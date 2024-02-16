@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Add</title>
-    </head>
-    <body>
-        <h1> Add user</h1>
-        <form action="", enctype="multipart/form-data", method="POST">
-            {% csrf_token %}
-            <label for="user_name">Name: </label>
-            <input type="text" name="user_name" id="user_name">
-            <label for="user_image_fileget">Image</label>
-            <input type="file" name="user_image" id="user_image">
-            <input type="submit" value="Submit">
-        </form>
-    </body>
-</html> 
+{% extends 'base_generic.html' %}
+{% block content %}
+    <h1> Add user</h1>
+    <form action="", enctype="multipart/form-data", method="POST">
+        {% csrf_token %}
+        <label for="user_name">Name: </label>
+        <input type="text" name="user_name" id="user_name">
+        <label for="user_image_fileget">Image</label>
+        <input type="file" name="user_image" id="user_image">
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}
