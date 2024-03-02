@@ -1,0 +1,33 @@
+Watching for file changes with StatReloader
+[02/Mar/2024 22:15:18] "GET /cms/ HTTP/1.1" 200 2081
+Not Found: /favicon.ico
+[02/Mar/2024 22:15:19] "GET /favicon.ico HTTP/1.1" 404 2684
+[02/Mar/2024 22:15:27] "GET /cms/door_detail/ HTTP/1.1" 200 1767
+[02/Mar/2024 22:15:29] "GET /cms/add_door/ HTTP/1.1" 200 1767
+[02/Mar/2024 22:15:44] "GET /cms/add_door/ HTTP/1.1" 200 1767
+[02/Mar/2024 22:15:50] "GET /cms/add_user/ HTTP/1.1" 200 2233
+[02/Mar/2024 22:15:52] "GET /cms/add_door/ HTTP/1.1" 200 1767
+[02/Mar/2024 22:16:28] "GET /cms/delete_user/ HTTP/1.1" 200 2028
+[02/Mar/2024 22:19:26] "GET /cms/add_user/ HTTP/1.1" 200 2233
+Not Found: /favicon.ico
+[02/Mar/2024 22:19:26] "GET /favicon.ico HTTP/1.1" 404 2684
+[02/Mar/2024 22:21:51] "GET /cms/add_user/ HTTP/1.1" 200 2233
+Not Found: /favicon.ico
+[02/Mar/2024 22:21:51] "GET /favicon.ico HTTP/1.1" 404 2684
+[02/Mar/2024 22:21:53] "GET /cms/add_door/ HTTP/1.1" 200 2235
+[02/Mar/2024 22:21:57] "GET /cms/add_door/ HTTP/1.1" 200 2235
+Watching for file changes with StatReloader
+[02/Mar/2024 22:45:54] "GET /cms/ HTTP/1.1" 200 2081
+Not Found: /favicon.ico
+[02/Mar/2024 22:45:54] "GET /favicon.ico HTTP/1.1" 404 2685
+[02/Mar/2024 22:46:05] "GET /cms/ HTTP/1.1" 200 2081
+/home/ubuntu/DoorAccess/DoorAccess/settings.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+March 02, 2024 - 22:45:46
+Django version 5.0.2, using settings 'DoorAccess.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+Watching for file changes with StatReloader

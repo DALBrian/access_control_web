@@ -1,4 +1,11 @@
-{% extends "base_generic.html" %}
+{% extends 'base_generic.html' %}
 {% block content %}
-    <h1>Under construction.</h1>
+    <h1> Add user</h1>
+    <form action="", enctype="multipart/form-data", method="POST">
+        {% csrf_token %}
+        <label for="door_position">Name: </label>
+        <p>e.g: Front door</p>
+        <input type="text" name="door_position" id="door_position">
+        <input type="submit" value="Submit">
+    </form>
 {% endblock %}

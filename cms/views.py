@@ -38,6 +38,11 @@ def user_detail(request):
     return render(request, 'cms/user_detail.html', context={'user_img_list': user_img_list})
                   
 def add_door(request):
+    if request.method == 'POST':
+        door_position = request.POST.get('door_position')
+        door = Door(position=door_position)
+        door.save()
+        return render(request, 'cms/add_door.html', locals())
     return render(request, 'cms/add_door.html', locals())
 
 def door_detail(request):
